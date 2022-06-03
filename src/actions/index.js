@@ -3,23 +3,19 @@ export function addMovieFavorite(payload) {
 }
 
 export function getMovies(titulo) {
-  return function (dispatch) {
-    return fetch("http://www.omdbapi.com/?apikey=8649fc7a&s=" + titulo)
-      .then((response) => response.json())
-      .then((json) => {
-        dispatch({ type: "GET_MOVIES", payload: json });
-      });
+  return async function (dispatch) {
+    const response = await fetch("http://www.omdbapi.com/?apikey=8649fc7a&s=" + titulo);
+    const json = await response.json();
+    dispatch({ type: "GET_MOVIES", payload: json });
   };
 }
 
 export function getMovieDetail(imdbID) {
-  return function (dispatch) {
-    return fetch("http://www.omdbapi.com/?apikey=8649fc7a&i=" + imdbID)
-      .then((response) => response.json())
-      .then((json) => {
-        dispatch({ type: "GET_MOVIE_DETAIL", payload: json });
-      });
-  };
+  return async function (dispatch) {
+    const response = await fetch("http://www.omdbapi.com/?apikey=8649fc7a&i=" + imdbID);
+    const json = await response.json();
+    dispatch({ type: "GET_MOVIE_DETAIL", payload: json });
+  };  
 }
 
 export function removeMovieFavorite(imdbID) {
@@ -27,11 +23,9 @@ export function removeMovieFavorite(imdbID) {
 }
 
 export function addTopRanked(imdbID) {
-  return function (dispatch) {
-    return fetch("http://www.omdbapi.com/?apikey=8649fc7a&i=" + imdbID)
-      .then((response) => response.json())
-      .then((json) => {
-        dispatch({ type: "ADD_TOP_RANKED", payload: json });
-      });
+  return async function (dispatch) {
+    const response = fetch("http://www.omdbapi.com/?apikey=8649fc7a&i=" + imdbID)
+    const json = response.json()
+    dispatch({ type: "ADD_TOP_RANKED", payload: json });
   };
 }

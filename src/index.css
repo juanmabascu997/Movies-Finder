@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Roboto_Condensed';
+  src: url('./Roboto_Condensed/RobotoCondensed-Bold.ttf') format('truetype');
+  font-style: bold;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Roboto_Condensed';
+  src: url('./Roboto_Condensed/RobotoCondensed-Light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto_Condensed";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

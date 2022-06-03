@@ -1,0 +1,11 @@
+#close:hover{
+    cursor: pointer;
+    color: brown;
+}
+
+.listaFav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap
+}
